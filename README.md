@@ -13,9 +13,9 @@ Web Directory Inspector is a powerful and efficient tool designed to check the a
 
 To install the required dependencies, use:
 
-\\\
+\`\`\
 pip install httpx colorama tabulate
-\\\
+\`\`\
 
 ## Usage
 
