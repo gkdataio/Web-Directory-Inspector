@@ -106,13 +106,32 @@ def check_directories(domain, directory_file, max_threads):
 
 if __name__ == "__main__":
     # Set up argument parsing
-    parser = argparse.ArgumentParser(description='Check directories for a given domain.')
-    parser.add_argument('-d', '--domain', required=True, help='The domain to check (e.g., http://example.com)')
+    parser = argparse.ArgumentParser(description='Check directories for given domain(s).')
+    parser.add_argument('-d', '--domain', help='The domain to check (e.g., http://example.com)')
+    parser.add_argument('-D', '--domains-list', help='Path to a file containing a list of domains')
     parser.add_argument('-l', '--list', required=True, help='Path to the file containing the list of directories')
     parser.add_argument('-t', '--threads', type=int, default=10, help='Number of concurrent threads (default: 10)')
 
     # Parse arguments
     args = parser.parse_args()
 
-    # Run the check
-    check_directories(args.domain, args.list, args.threads)
+    # Validate input: either a domain or a list of domains must be provided
+    if not args.domain and not args.domains_list:
+        print(f"{Fore.RED}Error: You must provide either a single domain with -d or a domains list with -D.")
+        exit(1)
+
+    # If a domains list is provided, check all domains in the list
+    domains = []
+    if args.domains_list:
+        try:
+            with open(args.domains_list, 'r') as file:
+                domains = [line.strip() for line in file.readlines() if line.strip()]
+        except Exception as e:
+            print(f"{Fore.RED}Error reading the domains list file '{args.domains_list}': {e}")
+            exit(1)
+    else:
+        domains.append(args.domain)
+
+    # Run the check for each domain
+    for domain in domains:
+        check_directories(domain, args.list, args.threads)
