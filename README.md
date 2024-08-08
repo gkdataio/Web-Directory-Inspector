@@ -13,15 +13,15 @@ Web Directory Inspector is a powerful and efficient tool designed to check the a
 
 To install the required dependencies, use:
 
-\`\`\
+```
 pip install httpx colorama tabulate
-\`\`\
+```
 
 ## Usage
 
-\\\
+```
 python3 quickhttpx.py -d http://example.com -l directories.txt -t 20
-\\\
+```
 
 - \`-d\` or \`--domain\`: The domain to check (e.g., http://example.com)
 - \`-l\` or \`--list\`: Path to the file containing the list of directories
