@@ -1,4 +1,4 @@
-# Web Directory Inspector
+![Web Directory Inspector](https://github.com/gkdataio/Web-Directory-Inspector/blob/259ab697255071abfd1e0619fe6c1b42bde4c119/128127389128381289391.png)
 
 Web Directory Inspector is a powerful and efficient tool designed to check the availability and status of multiple directories on a given domain. It provides detailed information about the HTTP status codes and content sizes of the checked URLs, utilizing multi-threading for faster processing.
 
