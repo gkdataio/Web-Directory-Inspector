@@ -38,7 +38,15 @@ def fetch_url(client, url):
         status_counts["Other"] += 1
         return f"{Fore.RED}Request error for {url}: {e}"
 
+def format_domain(domain):
+    if not domain.startswith(('http://', 'https://')):
+        return f"https://{domain}"
+    return domain
+
 def check_directories(domain, directory_file, max_threads):
+    # Format the domain to ensure it starts with https:// or http://
+    domain = format_domain(domain)
+    
     # Strip any trailing slashes from the domain
     domain = domain.rstrip('/')
 
