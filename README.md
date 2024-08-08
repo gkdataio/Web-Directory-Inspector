@@ -29,7 +29,7 @@ python web_directory_inspector.py -d http://example.com -l directories.txt -t 20
 
 ## Example Output
 
-[example](https://github.com/gkdataio/Web-Directory-Inspector/blob/main/c2794bc47e196889dc091886fdad24e5.png)
+[example](https://github.com/gkdataio/Web-Directory-Inspector/blob/f3707388c028a2e41d2fff1227042df586bdfa6a/c2794bc47e196889dc091886fdad24e5.png)
 
 ## Author
 
