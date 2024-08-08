@@ -23,9 +23,10 @@ pip install httpx colorama tabulate
 python3 quickhttpx.py -d http://example.com -l directories.txt -t 20
 ```
 
-- \`-d\` or \`--domain\`: The domain to check (e.g., http://example.com)
-- \`-l\` or \`--list\`: Path to the file containing the list of directories
-- \`-t\` or \`--threads\`: Number of concurrent threads (default: 10)
+- `-d` or `--domain`: The domain to check (e.g., http://example.com)
+- `-D` or `--domains-list`: Path to a file containing a list of domains
+- `-l` or `--list`: Path to the file containing the list of directories
+- `-t` or `--threads`: Number of concurrent threads (default: 10)
 
 ## Example Output
 
